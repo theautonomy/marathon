@@ -18,18 +18,16 @@ createApp({
 
     methods: {
         loadMarathons() {
-            let self = this;
             let url = 'data/marathons' + self.currentPage.toString() + '.json';
-            $.get(url, function (data) {
-                self.marathons = data
+            $.get(url, (data) => {
+                this.marathons = data
             });
         },
 
         loadMarathon(id) {
-            let self = this;
             let url = 'data/marathon' + id.toString() + '.json';
-            $.get(url, function (data) {
-                self.currentMarathon = data
+            $.get(url, (data) => {
+                this.currentMarathon = data
             });
         },
 
