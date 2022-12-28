@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Wei's Marathon Running</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+    <header class="p-2 bg-info text-dark">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <h4>Wei's Marathons (11/2008 - Current)</h4>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div id="app" class="container">
+        <div style="height:50px;"></div>
+        <div class="col-md-12 float-left">
+            <div class="row">
+                <div class="col-md-5">
+                    <div>
+                        <table class="tabletable-hover">
+                            <tr v-for="marathon in marathons.data">
+                                <td style="width: 90%">
+                                    <a href="#" @click="loadMarathon(marathon.id)" :class="{'bg-info' : marathon.id == currentMarathon.id}">{{marathon.id}} -
+                                        {{marathon.name}}</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="float-left">
+                        <nav aria-label="Page navigation" v-if="marathons.totalPages > 1">
+                            <ul class="pagination pagination justify-content-left">
+                                <li class="page-item" :class="{ disabled: !marathons.hasPrevious }">
+                                    <a class="page-link" href="#" @click="loadPage(1)">First</a>
+                                </li>
+                                <li class="page-item" :class="{ disabled: !marathons.hasPrevious }">
+                                    <a class="page-link" href="#"
+                                        @click="loadPage(marathons.pageNumber - 1)">Previous</a>
+                                </li>
+                                <li class="page-item" :class="{ disabled: !marathons.hasNext }">
+                                    <a class="page-link" href="#" @click="loadPage(marathons.pageNumber + 1)">Next</a>
+                                </li>
+                                <li class="page-item" :class="{ disabled: !marathons.hasNext }">
+                                    <a class="page-link" href="#" @click="loadPage(marathons.totalPages)">Last</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="col-md-7">
+                    {{currentMarathon.id}} - {{currentMarathon.name}}
+                    <br>
+                    <br>
+                    <i class="fa-solid fa-calendar-days"></i> : {{currentMarathon.date}}
+                    <br>
+                    <i class="fa-solid fa-location-pin"></i> : {{currentMarathon.location}}</li>
+                    <br>
+                    <i class="fa-solid fa-person-running"></i> : {{currentMarathon.distance}}
+                    <br>
+                    <i class="fa-regular fa-clock"></i> : {{currentMarathon.time}}
+                    <br>
+                    <i class="fa-solid fa-bolt"></i> : {{currentMarathon.pace}}
+                    <br>
+                    <br>
+                    <img v-bind:src="currentMarathon.picture" v-bind:alt="currentMarathon.name" height="350">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"></script>
+    <script src="marathon.js" type="module"></script>
+</body>
+
+</html>
