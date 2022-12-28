@@ -11,14 +11,13 @@ createApp({
     },
 
     created: function () {
-        let self = this;
         this.loadMarathons();
-        this.loadMarathon(self.currentPage);
+        this.loadMarathon(this.currentPage);
     },
 
     methods: {
         loadMarathons() {
-            let url = 'data/marathons' + self.currentPage.toString() + '.json';
+            let url = 'data/marathons' + this.currentPage.toString() + '.json';
             $.get(url, (data) => {
                 this.marathons = data
             });
