@@ -12,21 +12,21 @@
 </head>
 
 <body>
-    <header class="p-2 bg-info text-dark">
+    <header class="p-2">
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                 <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                    <h4>Wei's Marathons (11/2008 - Current)</h4>
+                    <h4>Wei's Marathon Journey(11/2008 - Current)</h4>
                 </a>
             </div>
         </div>
     </header>
 
-    <div id="app" class="container">
-        <div style="height:50px;"></div>
-        <div class="col-md-12 float-left">
+    <div id="app" class="container rounded bg-white mt-1 p-4" style="border:1px solid black">
+        <div style="height:5px;"></div>
+        <div class="container rounded col-md-12 m-2 p-4" style="border:1px solid green">
             <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-5" >
                     <div>
                         <table class="table table-hover">
                             <tr v-for="marathon in marathons.data">
@@ -73,7 +73,7 @@
                     <i class="fa-solid fa-bolt"></i> : {{currentMarathon.pace}}
                     <br>
                     <br>
-                    <img v-bind:src="currentMarathon.picture" v-bind:alt="currentMarathon.name" height="350">
+                    <img class="rounded" v-bind:src="currentMarathon.picture" v-bind:alt="currentMarathon.name" height="350">
                 </div>
             </div>
         </div>
