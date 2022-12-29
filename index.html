@@ -26,11 +26,11 @@
         <div style="height:5px;"></div>
         <div class="container rounded col-md-12 m-2 p-4" style="border:1px solid green">
             <div class="row">
-                <div class="col-md-5" >
+                <div class="col-md-6" >
                     <div>
                         <table class="table table-hover">
                             <tr v-for="marathon in marathons.data">
-                                <td style="width: 90%">
+                                <td style="border-bottom: none;">
                                     <a href="#" @click="loadMarathon(marathon.id)" :class="{'bg-info' : marathon.id == currentMarathon.id}">{{marathon.id}} -
                                         {{marathon.name}}</a>
                                 </td>
@@ -39,24 +39,14 @@
                     </div>
                     <div class="float-left">
                         <nav aria-label="Page navigation" v-if="marathons.totalPages > 1">
-                            <ul class="pagination pagination justify-content-left">
-                                <li class="page-item"> <a class="page-link" href="#" @click="loadPage(1)">1</a> </li>
-                                <li class="page-item"> <a class="page-link" href="#" @click="loadPage(2)">2</a> </li>
-                                <li class="page-item"> <a class="page-link" href="#" @click="loadPage(3)">3</a> </li>
-                                <li class="page-item"> <a class="page-link" href="#" @click="loadPage(4)">4</a> </li>
-                                <li class="page-item"> <a class="page-link" href="#" @click="loadPage(5)">5</a> </li>
-                                <li class="page-item"> <a class="page-link" href="#" @click="loadPage(6)">6</a> </li>
-                                <li class="page-item"> <a class="page-link" href="#" @click="loadPage(7)">7</a> </li>
-                                <li class="page-item"> <a class="page-link" href="#" @click="loadPage(8)">8</a> </li>
-                                <li class="page-item"> <a class="page-link" href="#" @click="loadPage(9)">9</a> </li>
-                                <li class="page-item"> <a class="page-link" href="#" @click="loadPage(10)">10</a> </li>
-                            </ul>
+                            <ul class="pagination justify-content-left">
+                                <li v-for="n in marathons.totalPages" class="page-item"> <a class="page-link" href="#" @click="loadPage(n)">{{n}}</a> </li>
+                            </ul> 
                         </nav>
                     </div>
                 </div>
-                <div class="col-md-7">
-                    {{currentMarathon.id}} - {{currentMarathon.name}}
-                    <br>
+                <div class="col-md-6">
+                    <h5>{{currentMarathon.id}} - {{currentMarathon.name}}</h5>
                     <br>
                     <i class="fa-solid fa-calendar-days"></i> : {{currentMarathon.date}}
                     <br>

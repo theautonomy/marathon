@@ -10,7 +10,7 @@ createApp({
         }
     },
 
-    created: function () {
+    mounted: function () {
         this.loadMarathons();
         this.loadMarathon(this.currentPage);
     },
