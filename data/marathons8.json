@@ -1,0 +1,49 @@
+{
+    "hasNext": true,
+    "hasPrevious": true,
+    "pageNumber": 8,
+    "totalPages": 10,
+
+    "data": [
+        {
+            "id": 71,
+            "name": "71 marathon"
+        },
+        {
+            "id": 72,
+            "name": "72 marathon"
+        },
+        {
+            "id": 73,
+            "name": "73 marathon"
+        },
+        {
+            "id": 74,
+            "name": "74 marathon"
+        },
+        {
+            "id": 75,
+            "name": "75 marathon"
+        },
+        {
+            "id": 76,
+            "name": "76 marathon"
+        },
+        {
+            "id": 77,
+            "name": "77 marathon"
+        },
+        {
+            "id": 78,
+            "name": "78 marathon"
+        },
+        {
+            "id": 79,
+            "name": "79 marathon"
+        },
+        {
+            "id": 80,
+            "name": "80 marathon"
+        }
+    ]
+}
