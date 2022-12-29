@@ -40,24 +40,20 @@
                     <div class="float-left">
                         <nav aria-label="Page navigation" v-if="marathons.totalPages > 1">
                             <ul class="pagination pagination justify-content-left">
-                                <li class="page-item" :class="{ disabled: !marathons.hasPrevious }">
-                                    <a class="page-link" href="#" @click="loadPage(1)">First</a>
-                                </li>
-                                <li class="page-item" :class="{ disabled: !marathons.hasPrevious }">
-                                    <a class="page-link" href="#"
-                                        @click="loadPage(marathons.pageNumber - 1)">Previous</a>
-                                </li>
-                                <li class="page-item" :class="{ disabled: !marathons.hasNext }">
-                                    <a class="page-link" href="#" @click="loadPage(marathons.pageNumber + 1)">Next</a>
-                                </li>
-                                <li class="page-item" :class="{ disabled: !marathons.hasNext }">
-                                    <a class="page-link" href="#" @click="loadPage(marathons.totalPages)">Last</a>
-                                </li>
+                                <li class="page-item"> <a class="page-link" href="#" @click="loadPage(1)">1</a> </li>
+                                <li class="page-item"> <a class="page-link" href="#" @click="loadPage(2)">2</a> </li>
+                                <li class="page-item"> <a class="page-link" href="#" @click="loadPage(3)">3</a> </li>
+                                <li class="page-item"> <a class="page-link" href="#" @click="loadPage(4)">4</a> </li>
+                                <li class="page-item"> <a class="page-link" href="#" @click="loadPage(5)">5</a> </li>
+                                <li class="page-item"> <a class="page-link" href="#" @click="loadPage(6)">6</a> </li>
+                                <li class="page-item"> <a class="page-link" href="#" @click="loadPage(7)">7</a> </li>
+                                <li class="page-item"> <a class="page-link" href="#" @click="loadPage(8)">8</a> </li>
+                                <li class="page-item"> <a class="page-link" href="#" @click="loadPage(9)">9</a> </li>
+                                <li class="page-item"> <a class="page-link" href="#" @click="loadPage(10)">10</a> </li>
                             </ul>
                         </nav>
                     </div>
                 </div>
-
                 <div class="col-md-7">
                     {{currentMarathon.id}} - {{currentMarathon.name}}
                     <br>
