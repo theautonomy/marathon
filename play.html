@@ -9,7 +9,33 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <link rel="stylesheet" href="static/css/style.css">
+    <!-- <link rel="stylesheet" href="static/css/style.css"> -->
+    <style type="text/css">
+        .numberCircle {
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+
+    background: #fff;
+    border: 2px solid #666;
+    color: #666;
+    text-align: center;
+
+    font: 32px Arial, sans-serif;
+}
+
+.numberCircle1 {
+    width: 24px;
+    line-height: 24px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 16px;
+    border: 2px solid #666;
+}
+
+
+    </style>
 </head>
 
 <body>
@@ -24,6 +50,11 @@
     </header>
 
     <div>
+         <span class="badge">1</span>
+
+         <div class="numberCircle1">30</div>
+         <span class="numberCircle1">100</span>
+
         <table id="myTable">
             <tr><td>this is cool</td></tr>
             <tr><td>this is cool</td></tr>
