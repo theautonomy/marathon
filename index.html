@@ -32,7 +32,8 @@
                             <tr v-for="marathon in marathons.data">
                                 <td style="border-bottom: none;">
                                     <!-- Create an icon wrapped by the fa-stack class -->
-                                    <i class="fa fa-star-o" style="font-size:18;color:blue">{{marathon.id}}</i>
+                                    <span class="fa fa-star-o font-italic"><i style="font-size:18px;color:blue">{{marathon.id}}</i>
+                                    </span>
                                     - <a href="#" @click="loadMarathon(marathon.id)" :class="{'bg-info' : marathon.id == currentMarathon.id}">{{marathon.name}}</a>
                                 </td>
                             </tr>
