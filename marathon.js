@@ -47,6 +47,8 @@ createApp({
                     url, success: function (data) {
                         if (i == 1) {
                             a = data;
+                            a.hasPrevious = true;
+                            a.hasNext = true;
                             self.loadMarathon(1);
                         } else {
                             a.data = a.data.concat(data.data);
