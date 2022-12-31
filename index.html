@@ -27,18 +27,6 @@
         <div class="container rounded col-md-12 m-6 p-4" style="border:1px solid green">
             <div class="row">
                 <div class="col-md-6">
-                    <div>
-                        <table class="table table-hover">
-                            <tr v-for="marathon in marathons.data">
-                                <td style="border-bottom: none;">
-                                    <!-- Create an icon wrapped by the fa-stack class -->
-                                    <span class="fa fa-star-o font-italic"><i style="font-size:18px;color:blue">{{marathon.id}}</i>
-                                    </span>
-                                    - <a href="#" @click="loadMarathon(marathon.id)" :class="{'bg-info' : marathon.id == currentMarathon.id}">{{marathon.name}}</a>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
                     <div class="float-left">
                         <nav aria-label="Page navigation" v-if="marathons.totalPages > 1">
                             <ul class="pagination justify-content-left">
@@ -55,10 +43,43 @@
                                 <li class="page-item" :class="{ disabled: !marathons.hasNext }">
                                     <a class="page-link" href="#" @click="loadPage(marathons.totalPages)">Last</a>
                                 </li>
-                                <li class="page-item"></li><a class="page-link" href="#" @click="loadAll()">All</a></li>
+                                <li class="page-item"><a class="page-link" href="#" @click="loadAll()">All</a></li>
                             </ul>
                         </nav>
                     </div>
+ 
+                    <div>
+                        <table class="table table-hover">
+                            <tr v-for="marathon in marathons.data">
+                                <td style="border-bottom: none;">
+                                    <!-- Create an icon wrapped by the fa-stack class -->
+                                    <span class="fa fa-star-o font-italic"><i style="font-size:18px;color:blue">{{marathon.id}}</i>
+                                    </span>
+                                    - <a href="#" @click="loadMarathon(marathon.id)" :class="{'bg-info' : marathon.id == currentMarathon.id}">{{marathon.name}}</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- <div class="float-left">
+                        <nav aria-label="Page navigation" v-if="marathons.totalPages > 1">
+                            <ul class="pagination justify-content-left">
+                                <li class="page-item" :class="{ disabled: !marathons.hasPrevious }">
+                                    <a class="page-link" href="#" @click="loadPage(1)">First</a>
+                                </li>
+                                <li class="page-item" :class="{ disabled: !marathons.hasPrevious }">
+                                    <a class="page-link" href="#"
+                                        @click="loadPage(marathons.pageNumber - 1)">Previous</a>
+                                </li>
+                                <li class="page-item" :class="{ disabled: !marathons.hasNext }">
+                                    <a class="page-link" href="#" @click="loadPage(marathons.pageNumber + 1)">Next</a>
+                                </li>
+                                <li class="page-item" :class="{ disabled: !marathons.hasNext }">
+                                    <a class="page-link" href="#" @click="loadPage(marathons.totalPages)">Last</a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#" @click="loadAll()">All</a></li>
+                            </ul>
+                        </nav>
+                    </div> -->
                 </div>
                 <div class="col-md-6">
                     <h5>{{currentMarathon.name}}</h5>
