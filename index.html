@@ -60,28 +60,8 @@
                             </tr>
                         </table>
                     </div>
-                    <!-- <div class="float-left">
-                        <nav aria-label="Page navigation" v-if="marathons.totalPages > 1">
-                            <ul class="pagination justify-content-left">
-                                <li class="page-item" :class="{ disabled: !marathons.hasPrevious }">
-                                    <a class="page-link" href="#" @click="loadPage(1)">First</a>
-                                </li>
-                                <li class="page-item" :class="{ disabled: !marathons.hasPrevious }">
-                                    <a class="page-link" href="#"
-                                        @click="loadPage(marathons.pageNumber - 1)">Previous</a>
-                                </li>
-                                <li class="page-item" :class="{ disabled: !marathons.hasNext }">
-                                    <a class="page-link" href="#" @click="loadPage(marathons.pageNumber + 1)">Next</a>
-                                </li>
-                                <li class="page-item" :class="{ disabled: !marathons.hasNext }">
-                                    <a class="page-link" href="#" @click="loadPage(marathons.totalPages)">Last</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#" @click="loadAll()">All</a></li>
-                            </ul>
-                        </nav>
-                    </div> -->
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6" v-if="currentMarathon.id > 0">
                     <h5>{{currentMarathon.name}}</h5>
                     <br>
                     <i class="fa-solid fa-calendar-days"></i>  {{currentMarathon.date}}

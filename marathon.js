@@ -24,7 +24,7 @@ createApp({
 
     methods: {
         loadQuotes() {
-            let url = 'data/quotes.json';
+            let url = 'content/data/quotes.json';
             $.get(url, (data) => {
                 this.quotes = data
                 this.randomQuote = this.quotes[Math.floor(Math.random() * this.quotes.length)];
