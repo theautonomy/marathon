@@ -42,8 +42,19 @@
                     <div class="float-left">
                         <nav aria-label="Page navigation" v-if="marathons.totalPages > 1">
                             <ul class="pagination justify-content-left">
-                                <li v-for="n in marathons.totalPages" class="page-item"> <a class="page-link" href="#"
-                                        @click="loadPage(n)">{{n}}</a> </li>
+                                <li class="page-item" :class="{ disabled: !marathons.hasPrevious }">
+                                    <a class="page-link" href="#" @click="loadPage(1)">First</a>
+                                </li>
+                                <li class="page-item" :class="{ disabled: !marathons.hasPrevious }">
+                                    <a class="page-link" href="#"
+                                        @click="loadPage(marathons.pageNumber - 1)">Previous</a>
+                                </li>
+                                <li class="page-item" :class="{ disabled: !marathons.hasNext }">
+                                    <a class="page-link" href="#" @click="loadPage(marathons.pageNumber + 1)">Next</a>
+                                </li>
+                                <li class="page-item" :class="{ disabled: !marathons.hasNext }">
+                                    <a class="page-link" href="#" @click="loadPage(marathons.totalPages)">Last</a>
+                                </li>
                                 <li class="page-item"></li><a class="page-link" href="#" @click="loadAll()">All</a></li>
                             </ul>
                         </nav>

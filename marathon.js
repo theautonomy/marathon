@@ -40,12 +40,14 @@ createApp({
 
         loadAll() {
             let a = [];
+            let self = this;
             for (let i = 1; i < 11; i++) {
                 let url = 'data/marathons' + i + '.json';
                 $.get({
                     url, success: function (data) {
                         if (i == 1) {
                             a = data;
+                            self.loadMarathon(1);
                         } else {
                             a.data = a.data.concat(data.data);
                         }
