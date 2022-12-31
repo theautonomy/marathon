@@ -32,7 +32,7 @@ createApp({
         },
 
         loadMarathons(page) {
-            let url = 'data/marathons' + page + '.json';
+            let url = 'content/data/marathons' + page + '.json';
             $.get(url, (data) => {
                 this.marathons = data
             });
@@ -42,7 +42,7 @@ createApp({
             let a = [];
             let self = this;
             for (let i = 1; i < 11; i++) {
-                let url = 'data/marathons' + i + '.json';
+                let url = 'content/data/marathons' + i + '.json';
                 $.get({
                     url, success: function (data) {
                         if (i == 1) {
@@ -59,7 +59,7 @@ createApp({
         },
 
         loadMarathon(id) {
-            let url = 'data/marathon' + id.toString() + '.json';
+            let url = 'content/data/marathon' + id.toString() + '.json';
             $.get(url, (data) => {
                 this.currentMarathon = data
             });
