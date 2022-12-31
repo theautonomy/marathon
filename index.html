@@ -44,6 +44,7 @@
                             <ul class="pagination justify-content-left">
                                 <li v-for="n in marathons.totalPages" class="page-item"> <a class="page-link" href="#"
                                         @click="loadPage(n)">{{n}}</a> </li>
+                                <li class="page-item"></li><a class="page-link" href="#" @click="loadAll()">All</a></li>
                             </ul>
                         </nav>
                     </div>

@@ -16,8 +16,8 @@ createApp({
         this.loadQuotes();
         let min = Math.ceil(1);
         let max = Math.floor(8);
-        let randomPage = Math.floor(Math.random() * (max - min) + min); 
-        let randomMarathon = Math.floor(Math.random() * 10); 
+        let randomPage = Math.floor(Math.random() * (max - min) + min);
+        let randomMarathon = Math.floor(Math.random() * 10);
         this.loadPage(randomPage);
         this.loadMarathon((randomPage - 1) * 10 + randomMarathon);
     },
@@ -31,11 +31,29 @@ createApp({
             });
         },
 
-        loadMarathons() {
-            let url = 'data/marathons' + this.currentPage.toString() + '.json';
+        loadMarathons(page) {
+            let url = 'data/marathons' + page + '.json';
             $.get(url, (data) => {
                 this.marathons = data
             });
+        },
+
+        loadAll() {
+            let a = [];
+            for (let i = 1; i < 11; i++) {
+                let url = 'data/marathons' + i + '.json';
+                $.get({
+                    url, success: function (data) {
+                        if (i == 1) {
+                            a = data;
+                        } else {
+                            a.data = a.data.concat(data.data);
+                        }
+                    },
+                    async: false
+                });
+            }
+            this.marathons = a;
         },
 
         loadMarathon(id) {
@@ -48,7 +66,7 @@ createApp({
 
         loadPage(page) {
             this.currentPage = page;
-            this.loadMarathons();
+            this.loadMarathons(page);
             this.loadMarathon((page - 1) * 10 + 1);
         },
     }
