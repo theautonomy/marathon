@@ -31,19 +31,19 @@
                         <nav aria-label="Page navigation" v-if="marathons.totalPages > 1">
                             <ul class="pagination">
                                 <li class="page-item" :class="{ disabled: !marathons.hasPrevious }">
-                                    <strong><a class="page-link" href="#" @click="loadPage(1)">10</a></strong>
+                                    <a class="page-link" href="#" @click="loadPage(1)">10</a>
                                 </li>
                                 <li class="page-item" :class="{ disabled: !marathons.hasPrevious }">
-                                    <strong><a class="page-link" href="#" @click="loadPage(marathons.pageNumber - 1)">Previous</a></strong>
+                                    <a class="page-link" href="#" @click="loadPage(marathons.pageNumber - 1)">Previous</a>
                                 </li>
                                 <li class="page-item" :class="{ disabled: !marathons.hasNext }">
-                                    <strong><a class="page-link" href="#" @click="loadPage(marathons.pageNumber + 1)">Next</a></strong>
+                                    <a class="page-link" href="#" @click="loadPage(marathons.pageNumber + 1)">Next</a>
                                 </li>
                                 <li class="page-item" :class="{ disabled: !marathons.hasNext }">
-                                    <strong><a class="page-link" href="#" @click="loadPage(marathons.totalPages)">100</a></strong>
+                                    <a class="page-link" href="#" @click="loadPage(marathons.totalPages)">100</a>
                                 </li>
                                 <li class="page-item">
-                                    <strong><a class="page-link" href="#" @click="loadAll()">All</a></strong>
+                                    <a class="page-link" href="#" @click="loadAll()">All</a>
                                 </li>
                             </ul>
                         </nav>
@@ -63,20 +63,16 @@
                     </div>
                 </div>
                 <div class="col-md-6" v-if="currentMarathon.id > 0">
-                    <h5><strong>{{currentMarathon.name}}</strong></h5>
-                    <br>
-                    <i class="fa-solid fa-calendar-days"></i>  {{currentMarathon.date}}
-                    <br>
-                    <i class="fa-solid fa-location-pin"></i>  {{currentMarathon.location}}</li>
-                    <br>
-                    <i class="fa-solid fa-person-running"></i>  {{currentMarathon.distance}}
-                    <br>
-                    <i class="fa-regular fa-clock"></i>  {{currentMarathon.time}}
-                    <br>
-                    <i class="fa-solid fa-bolt"></i>  {{currentMarathon.pace}}
-                    <br>
-                    <br>
-                    <img class="rounded" v-bind:src="'content/img/' + currentMarathon.picture" v-bind:alt="currentMarathon.name" height="280">
+                    <h5>{{currentMarathon.name}}</h5>
+                    <ul class="list-unstyled mt-4">
+                        <li><i class="fa-solid fa-calendar-days"></i>  {{currentMarathon.date}}</li>
+                        <li><i class="fa-solid fa-person-running"></i>  {{currentMarathon.distance}}</li>
+                        <li><i class="fa-solid fa-location-pin"></i>  {{currentMarathon.location}}</li>
+                        <li><i class="fa-solid fa-person-running"></i>  {{currentMarathon.distance}}</li>
+                        <li><i class="fa-regular fa-clock"></i>  {{currentMarathon.time}}</li>
+                        <li></li><i class="fa-solid fa-bolt"></i>  {{currentMarathon.pace}}</li>
+                    </ul>
+                    <img class="rounded" v-bind:src="'content/img/' + currentMarathon.picture" v-bind:alt="currentMarathon.name" height="260">
                 </div>
             </div>
             <div class="container  mt-4 rounded">
