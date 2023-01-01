@@ -31,7 +31,7 @@
                         <nav aria-label="Page navigation" v-if="marathons.totalPages > 1">
                             <ul class="pagination">
                                 <li class="page-item" :class="{ disabled: !marathons.hasPrevious }">
-                                    <a class="page-link" href="#" @click="loadPage(1)">First</a>
+                                    <a class="page-link" href="#" @click="loadPage(1)">1-10</a>
                                 </li>
                                 <li class="page-item" :class="{ disabled: !marathons.hasPrevious }">
                                     <a class="page-link" href="#"
@@ -41,7 +41,7 @@
                                     <a class="page-link" href="#" @click="loadPage(marathons.pageNumber + 1)">Next</a>
                                 </li>
                                 <li class="page-item" :class="{ disabled: !marathons.hasNext }">
-                                    <a class="page-link" href="#" @click="loadPage(marathons.totalPages)">Last</a>
+                                    <a class="page-link" href="#" @click="loadPage(marathons.totalPages)">91-100</a>
                                 </li>
                                 <li class="page-item"><a class="page-link" href="#" @click="loadAll()">All</a></li>
                             </ul>
@@ -75,7 +75,7 @@
                     <i class="fa-solid fa-bolt"></i>  {{currentMarathon.pace}}
                     <br>
                     <br>
-                    <img class="rounded" v-bind:src="'content/img/' + currentMarathon.picture" v-bind:alt="currentMarathon.name" height="350">
+                    <img class="rounded" v-bind:src="'content/img/' + currentMarathon.picture" v-bind:alt="currentMarathon.name" height="280">
                 </div>
             </div>
             <div class="container  mt-4 rounded">
