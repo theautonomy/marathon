@@ -24,12 +24,12 @@
 
     <div id="app" class="container rounded bg-white mt-1 p-4" style="border:1px solid black">
         <div style="height:5px;"></div>
-        <div class="container rounded col-md-12 m-6 p-4" style="border:1px solid green">
+        <div class="container rounded col-md-12 m p-4" style="border:1px solid green">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="float-left">
+                    <div>
                         <nav aria-label="Page navigation" v-if="marathons.totalPages > 1">
-                            <ul class="pagination justify-content-left">
+                            <ul class="pagination">
                                 <li class="page-item" :class="{ disabled: !marathons.hasPrevious }">
                                     <a class="page-link" href="#" @click="loadPage(1)">First</a>
                                 </li>
