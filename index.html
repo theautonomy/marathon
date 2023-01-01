@@ -31,7 +31,7 @@
                         <nav aria-label="Page navigation" v-if="marathons.totalPages > 1">
                             <ul class="pagination">
                                 <li class="page-item" :class="{ disabled: !marathons.hasPrevious }">
-                                    <a class="page-link" href="#" @click="loadPage(1)">1-10</a>
+                                    <a class="page-link" href="#" @click="loadPage(1)">10</a>
                                 </li>
                                 <li class="page-item" :class="{ disabled: !marathons.hasPrevious }">
                                     <a class="page-link" href="#"
@@ -41,7 +41,7 @@
                                     <a class="page-link" href="#" @click="loadPage(marathons.pageNumber + 1)">Next</a>
                                 </li>
                                 <li class="page-item" :class="{ disabled: !marathons.hasNext }">
-                                    <a class="page-link" href="#" @click="loadPage(marathons.totalPages)">91-100</a>
+                                    <a class="page-link" href="#" @click="loadPage(marathons.totalPages)">100</a>
                                 </li>
                                 <li class="page-item"><a class="page-link" href="#" @click="loadAll()">All</a></li>
                             </ul>
