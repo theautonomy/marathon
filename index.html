@@ -31,27 +31,28 @@
                         <nav aria-label="Page navigation" v-if="marathons.totalPages > 1">
                             <ul class="pagination">
                                 <li class="page-item" :class="{ disabled: !marathons.hasPrevious }">
-                                    <a class="page-link" href="#" @click="loadPage(1)">10</a>
+                                    <strong><a class="page-link" href="#" @click="loadPage(1)">10</a></strong>
                                 </li>
                                 <li class="page-item" :class="{ disabled: !marathons.hasPrevious }">
-                                    <a class="page-link" href="#"
-                                        @click="loadPage(marathons.pageNumber - 1)">Previous</a>
+                                    <strong><a class="page-link" href="#" @click="loadPage(marathons.pageNumber - 1)">Previous</a></strong>
                                 </li>
                                 <li class="page-item" :class="{ disabled: !marathons.hasNext }">
-                                    <a class="page-link" href="#" @click="loadPage(marathons.pageNumber + 1)">Next</a>
+                                    <strong><a class="page-link" href="#" @click="loadPage(marathons.pageNumber + 1)">Next</a></strong>
                                 </li>
                                 <li class="page-item" :class="{ disabled: !marathons.hasNext }">
-                                    <a class="page-link" href="#" @click="loadPage(marathons.totalPages)">100</a>
+                                    <strong><a class="page-link" href="#" @click="loadPage(marathons.totalPages)">100</a></strong>
                                 </li>
-                                <li class="page-item"><a class="page-link" href="#" @click="loadAll()">All</a></li>
+                                <li class="page-item">
+                                    <strong><a class="page-link" href="#" @click="loadAll()">All</a></strong>
+                                </li>
                             </ul>
                         </nav>
                     </div>
  
                     <div>
-                        <table class="table table-hover">
+                        <table class="table table-hover table-borderless">
                             <tr v-for="marathon in marathons.data">
-                                <td style="border-bottom: none;">
+                                <td>
                                     <!-- Create an icon wrapped by the fa-stack class -->
                                     <span class="fa fa-star-o font-italic"><i style="font-size:18px;color:blue">{{marathon.id}}</i>
                                     </span>
@@ -62,7 +63,7 @@
                     </div>
                 </div>
                 <div class="col-md-6" v-if="currentMarathon.id > 0">
-                    <h5>{{currentMarathon.name}}</h5>
+                    <h5><strong>{{currentMarathon.name}}</strong></h5>
                     <br>
                     <i class="fa-solid fa-calendar-days"></i>  {{currentMarathon.date}}
                     <br>
