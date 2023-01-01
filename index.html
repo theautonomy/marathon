@@ -65,11 +65,11 @@
                 <div class="col-md-6" v-if="currentMarathon.id > 0">
                     <h5>{{currentMarathon.name}}</h5>
                     <ul class="list-unstyled mt-4">
-                        <li><i class="fa-solid fa-calendar-days"></i><span class="mx-4 badge rounded-pill bg-secondary ">{{currentMarathon.date}}</span></li>
-                        <li><i class="fa-solid fa-location-pin"></i> <span class="mx-4 badge rounded-pill bg-secondary ">{{currentMarathon.location}}</span></li>
-                        <li><i class="fa-solid fa-person-running"></i> <span class="mx-4 badge rounded-pill bg-secondary ">{{currentMarathon.distance}}</span></li>
-                        <li><i class="fa-regular fa-clock"></i>  <span class="mx-4 badge rounded-pill bg-secondary ">{{currentMarathon.time}}</span></li>
-                        <li><i class="fa-solid fa-bolt"></i>  <span class="mx-4 badge rounded-pill bg-secondary ">{{currentMarathon.pace}}</span></li>
+                        <li><i class="fa-solid fa-calendar-days"></i><span class="mx-4 mb-2 badge rounded-pill bg-secondary w-40">{{currentMarathon.date}}</span></li>
+                        <li><i class="fa-solid fa-location-pin"></i> <span class="mx-4 mb-2 badge rounded-pill bg-secondary ">{{currentMarathon.location}}</span></li>
+                        <li><i class="fa-solid fa-person-running"></i> <span class="mx-4 mb-2 badge rounded-pill bg-secondary ">{{currentMarathon.distance}}</span></li>
+                        <li><i class="fa-regular fa-clock"></i>  <span class="mx-4 mb-2 badge rounded-pill bg-secondary ">{{currentMarathon.time}}</span></li>
+                        <li><i class="fa-solid fa-bolt"></i>  <span class="mx-4 mb-2 badge rounded-pill bg-secondary ">{{currentMarathon.pace}}</span></li>
                     </ul>
                     <img class="rounded" v-bind:src="'content/img/' + currentMarathon.picture" v-bind:alt="currentMarathon.name" height="260">
                 </div>
