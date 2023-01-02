@@ -17,7 +17,7 @@ createApp({
         let min = Math.ceil(1);
         let max = Math.floor(8);
         let randomPage = Math.floor(Math.random() * (max - min) + min);
-        let randomMarathon = Math.floor(Math.random() * 10);
+        let randomMarathon = Math.floor(Math.random() * 10 + 1);
         this.loadMarathons(randomPage);
         this.loadMarathon((randomPage - 1) * 10 + randomMarathon);
     },
