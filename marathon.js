@@ -8,18 +8,17 @@ createApp({
             currentMarathon: [],
             quotes: [],
             randomQuote: "",
-            currentPage: 1
+            totalPages: 8,
+            numberPerPage: 10
         }
     },
 
     mounted: function () {
         this.loadQuotes();
-        let min = Math.ceil(1);
-        let max = Math.floor(8);
-        let randomPage = Math.floor(Math.random() * (max - min) + min);
-        let randomMarathon = Math.floor(Math.random() * 10 + 1);
+        let randomPage = Math.floor(Math.random() * this.totalPages + 1);
+        let randomMarathon = (randomPage -1) * this.numberPerPage + Math.floor(Math.random() * this.numberPerPage + 1);
         this.loadMarathons(randomPage);
-        this.loadMarathon((randomPage - 1) * 10 + randomMarathon);
+        this.loadMarathon(randomMarathon);
     },
 
     methods: {
@@ -69,9 +68,8 @@ createApp({
         },
 
         loadPage(page) {
-            this.currentPage = page;
             this.loadMarathons(page);
-            this.loadMarathon((page - 1) * 10 + 1);
+            this.loadMarathon((page - 1) * this.numberPerPage + 1);
         },
     }
 }).mount('#app');
