@@ -19,10 +19,9 @@
     </header>
 
     <div id="app" class="container rounded bg-white mt-1 p-4" style="border:1px solid black">
-        <div style="height:5px;"></div>
-        <div class="container rounded col-md-12 m p-4" style="border:1px solid green">
-            <div class="row">
-                <div class="col-md-6">
+        <div class="container rounded m p-4" style="border:1px solid green">
+            <div class="row justify-content-md-center">
+                <div class="col-sm-6 col-md-4 ">
                     <div>
                         <nav aria-label="Page navigation" v-if="marathons.totalPages > 1">
                             <ul class="pagination">
@@ -49,7 +48,6 @@
                         <table class="table table-hover table-borderless">
                             <tr v-for="marathon in marathons.data">
                                 <td>
-                                    <!-- Create an icon wrapped by the fa-stack class -->
                                     <span class="fa fa-star-o font-italic"><i style="font-size:18px;color:blue">{{marathon.id}}</i>
                                     </span>
                                     - <a href="#" @click="loadMarathon(marathon.id)" :class="{'bg-info' : marathon.id == currentMarathon.id}">{{marathon.name}}</a>
@@ -58,14 +56,14 @@
                         </table>
                     </div>
                 </div>
-                <div class="col-md-6" v-if="currentMarathon.id > 0">
+                <div class="col-sm-6 col-md-4" v-if="currentMarathon.id > 0">
                     <h5>{{currentMarathon.name}}</h5>
                     <ul class="list-unstyled list-group w-75 mt-4">
-                        <li list-group-item><i class="fa-solid fa-calendar-days"></i><span class="mx-4 mb-2 badge rounded-pill bg-secondary ">{{currentMarathon.date}}</span></li>
-                        <li list-group-item><i class="fa-solid fa-location-pin"></i><span class="mx-4 mb-2 badge rounded-pill bg-secondary ">{{currentMarathon.location}}</span></li>
-                        <li list-group-item><i class="fa-solid fa-person-running"></i><span class="mx-4 mb-2 badge rounded-pill bg-secondary ">{{currentMarathon.distance}}</span></li>
-                        <li list-group-item><i class="fa-regular fa-clock"></i><span class="mx-4 mb-2 badge rounded-pill bg-secondary ">{{currentMarathon.time}}</span></li>
-                        <li list-group-item><i class="fa-solid fa-bolt"></i><span class="mx-4 mb-2 badge rounded-pill bg-secondary ">{{currentMarathon.pace}}</span></li>
+                        <li list-group-item><i class="fa-solid fa-calendar-days"></i><span class="mx-4 mb-2 badge bg-secondary ">{{currentMarathon.date}}</span></li>
+                        <li list-group-item><i class="fa-solid fa-location-pin"></i><span class="mx-4 mb-2 badge bg-secondary ">{{currentMarathon.location}}</span></li>
+                        <li list-group-item><i class="fa-solid fa-person-running"></i><span class="mx-4 mb-2 badge bg-secondary ">{{currentMarathon.distance}}</span></li>
+                        <li list-group-item><i class="fa-regular fa-clock"></i><span class="mx-4 mb-2 badge bg-secondary ">{{currentMarathon.time}}</span></li>
+                        <li list-group-item><i class="fa-solid fa-bolt"></i><span class="mx-4 mb-2 badge bg-secondary ">{{currentMarathon.pace}}</span></li>
                     </ul>
                     <div class="mt-4">
                         <img class="rounded" v-bind:src="'content/img/' + currentMarathon.picture" v-bind:alt="currentMarathon.name" height="260">
