@@ -6,7 +6,7 @@
 
 body {
   margin: 0;
-  background-color: hsl(200, 100%, 85%);
+  background-color: white; 
   color: hsl(200, 100%, 10%);
   font-family: sans-serif;
 }
@@ -104,7 +104,7 @@ body {
 }
 
 .hour-row {
-  background-color: hsl(200, 60%, 75%);
+  background-color: white; 
 }
 
 .hour-row:nth-child(2n) {
