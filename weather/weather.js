@@ -1,5 +1,6 @@
 import { createApp } from 'https://unpkg.com/vue@3.2.45/dist/vue.esm-browser.js?module'
 import axios from 'https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/esm/axios.js'
+import $ from 'https://cdn.jsdelivr.net/npm/jquery@3.6.0/+esm?module'
 import { ICON_MAP } from "./iconMap.js"
 
 createApp({
@@ -7,11 +8,13 @@ createApp({
     return {
       current: [],
       daily: [],
-      hourly: []
+      hourly: [],
+      location: [],
     }
   },
 
   mounted: function () {
+    this.getLocation();
     navigator.geolocation.getCurrentPosition(this.positionSuccess, this.positionError)
   },
 
@@ -29,6 +32,32 @@ createApp({
           console.error(e)
           alert("Error getting weather.")
         })
+    },
+
+    getLocation() {
+      const config = {
+          jsonpCallback: "callback",
+          dataType: "jsonp",
+          "Access-Control-Allow-Origin": "*"
+      };
+
+        // axios.get("https://geolocation-db.com/jsonp", config).then(resp => {
+        //   this.location = resp.data
+        // }).catch(e => {
+        //   console.log(e)
+        // });
+
+      self = this;
+
+      $.ajax({
+        url: "https://geolocation-db.com/jsonp",
+        jsonpCallback: "callback",
+        dataType: "jsonp",
+        success: function (location) {
+          self.location = location;
+        }
+      });
+
     },
 
     getWeather(lat, lon, timezone) {
