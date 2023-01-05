@@ -75,7 +75,7 @@ createApp({
         windSpeed: Math.round(windSpeed),
         precip: Math.round(precip * 100) / 100,
         iconCode,
-        iconUrl: `public/icons/${ICON_MAP.get(current_weather.weathercode)}.svg`,
+        iconUrl: `${ICON_MAP.get(current_weather.weathercode)}.svg`,
       }
     },
 
@@ -84,7 +84,7 @@ createApp({
         return {
           timestamp: new Intl.DateTimeFormat(undefined, { weekday: "long" }).format(time * 1000),
           iconCode: daily.weathercode[index],
-          iconUrl: `public/icons/${ICON_MAP.get(daily.weathercode[index])}.svg`,
+          iconUrl: `${ICON_MAP.get(daily.weathercode[index])}.svg`,
           maxTemp: Math.round(daily.temperature_2m_max[index]),
         }
       })
@@ -102,14 +102,14 @@ createApp({
             feelsLike: Math.round(hourly.apparent_temperature[index]),
             windSpeed: Math.round(hourly.windspeed_10m[index]),
             precip: Math.round(hourly.precipitation[index] * 100) / 100,
-            iconUrl: `public/icons/${ICON_MAP.get(hourly.weathercode[index])}.svg`,
+            iconUrl: `${ICON_MAP.get(hourly.weathercode[index])}.svg`,
           }
         })
         .filter(({ timestamp }) => timestamp >= current_weather.time * 1000)
     },
 
     getIconUrl(iconCode) {
-      return `public/icons/${ICON_MAP.get(iconCode)}.svg`
+      return `${ICON_MAP.get(iconCode)}.svg`
     },
 
     renderWeather({ current, daily, hourly }) {

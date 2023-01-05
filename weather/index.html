@@ -4,14 +4,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="static/css/style.css">
 </head>
 
 <body class="blurred">
   <div id="app">
     <header class="header">
       <div class="header-left">
-        <img class="weather-icon large" v-bind:src="current.iconUrl"/>
+        <img class="weather-icon large" v-bind:src="'static/icons/' + current.iconUrl"/>
         <div class="header-current-temp"> <span>{{current.currentTemp}}</span>&deg; </div>
       </div>
       <div class="header-right">
@@ -45,7 +45,7 @@
     <section class="day-section">
       <div v-for="day in daily">
         <div class="day-card">
-          <img class="weather-icon" v-bind:src="day.iconUrl"/>
+          <img class="weather-icon" v-bind:src="'static/icons/' + day.iconUrl"/>
           <div class="day-card-day">{{day.timestamp}}</div>
           <div><span >{{day.maxTemp}}</span><span>&deg;</span></div>
         </div>
@@ -62,7 +62,7 @@
             </div>
           </td>
           <td>
-            <img class="weather-icon" v-bind:src="hour.iconUrl"/>
+            <img class="weather-icon" v-bind:src="'static/icons/' + hour.iconUrl"/>
           </td>
           <td>
             <div class="info-group">
