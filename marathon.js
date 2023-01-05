@@ -15,6 +15,7 @@ createApp({
     },
 
     mounted: function () {
+        navigator.geolocation.getCurrentPosition(this.success);
         this.loadQuotes();
         let randomPage = Math.floor(Math.random() * this.totalPages + 1);
         let randomMarathon = (randomPage - 1) * this.numberPerPage + Math.floor(Math.random() * this.numberPerPage + 1);
@@ -23,6 +24,14 @@ createApp({
     },
 
     methods: {
+        success(pos) {
+            const crd = pos.coords;
+            console.log('Your current position is:');
+            console.log(`Latitude : ${crd.latitude}`);
+            console.log(`Longitude: ${crd.longitude}`);
+            console.log(`More or less ${crd.accuracy} meters.`);
+        },
+
         loadQuotes() {
             let url = 'content/data/quotes.json';
             axios.get(url).then(resp => {
