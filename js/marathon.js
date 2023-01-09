@@ -21,7 +21,7 @@ createApp({
         }
     },
 
-    mounted: function () {
+    beforeMount: function () {
         this.loadQuotes();
         let randomPage = Math.floor(Math.random() * this.totalPages + 1);
         let randomMarathon = (randomPage - 1) * this.numberPerPage + Math.floor(Math.random() * this.numberPerPage + 1);
