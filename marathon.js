@@ -2,7 +2,14 @@ import { createApp } from 'https://unpkg.com/vue@3.2.45/dist/vue.esm-browser.js?
 import $ from 'https://cdn.jsdelivr.net/npm/jquery@3.6.0/+esm?module'
 import axios from 'https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/esm/axios.js'
 
+import Quote from './quote.js'
+
 createApp({
+
+    components: {
+      Quote
+    },
+
     data() {
         return {
             marathons: [],

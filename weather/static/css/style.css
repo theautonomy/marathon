@@ -6,7 +6,7 @@
 
 body {
   margin: 0;
-  background-color: white; 
+  background-color: SlateBlue 
   color: hsl(200, 100%, 10%);
   font-family: sans-serif;
 }
@@ -104,7 +104,7 @@ body {
 }
 
 .hour-row {
-  background-color: white; 
+  background-color: DodgerBlue 
 }
 
 .hour-row:nth-child(2n) {
