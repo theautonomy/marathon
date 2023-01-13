@@ -3,9 +3,33 @@ html {
     min-height: 100%;
 }
 
-/* #app { */
 body {
     background:url(../img/bg3.jpg) center center fixed;
     background-size: cover;
     /* background:url(https://images.everydayhealth.com/images/last-minute-marathon-tips-722x406.jpg) no-repeat center center fixed; */
+}
+
+#moveIn {
+  position: relative;
+  animation: mymove 0.8s;
+}
+
+@keyframes mymove {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  75% {
+    font-size: 300%;
+    margin-left: 25%;
+    width: 150%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+  /* from {top: 0px;} */
+  /* to {top: 200px;} */
 }
